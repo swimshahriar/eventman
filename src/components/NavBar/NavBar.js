@@ -1,5 +1,4 @@
 import React, { useState, useEffect } from "react";
-import { Heading } from "@chakra-ui/react";
 import { NavLink } from "react-router-dom";
 import { HiMenuAlt3 } from "react-icons/hi";
 import { AiOutlineClose } from "react-icons/ai";
@@ -19,18 +18,19 @@ const NavBar = () => {
       setIsMobile(true);
     } else {
       setIsMobile(false);
+      setIsMenuOpen(false);
     }
   };
   useEffect(() => {
     window.onresize = onResizeHandler;
-  }, [window.onresize]);
+  }, []);
 
   return (
     <>
       <nav className="navBar">
-        <Heading size="xl">
+        <h1 className="navBar__brand">
           <NavLink to="/">Eventman</NavLink>
-        </Heading>
+        </h1>
         {!isMobile && (
           <ul className="navBar__list desktop">
             <li className="navBar__list-item">

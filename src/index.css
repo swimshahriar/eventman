@@ -11,3 +11,13 @@
   --primary-light: #fae8e0;
   --font-dark: #42312e;
 }
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: "Overlock", serif;
+  font-weight: bold;
+}

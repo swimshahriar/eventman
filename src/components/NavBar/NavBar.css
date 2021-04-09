@@ -15,9 +15,14 @@
   }
 }
 
+.navBar__brand {
+  font-size: calc(1.2rem + (100vw / 100));
+  font-weight: bold;
+}
+
 .navBar__list {
   display: flex;
-  font-size: 1.5rem;
+  font-size: calc(1rem + (100vw / 190));
 }
 
 .navBar__list-item {
@@ -42,7 +47,7 @@
 
 .mobileNav__btn,
 .mobileNav__btn-close {
-  font-size: 2rem;
+  font-size: calc(1rem + (100vw / 150));
 }
 
 .mobileNav__btn-close {
@@ -64,7 +69,7 @@
   justify-content: center;
   align-items: center;
   list-style: none;
-  font-size: 2rem;
+  font-size: calc(1rem + (100vw / 50));
   color: var(--primary-light);
 }
 
