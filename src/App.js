@@ -9,15 +9,19 @@ import Home from "./pages/Home";
 
 const App = () => {
   return (
-    <div>
-      <NavBar />
-      <Switch>
-        <Route to="/" exact>
-          <Home />
-        </Route>
-        <Redirect to="/" />
-      </Switch>
-    </div>
+    <>
+      <header>
+        <NavBar />
+      </header>
+      <main>
+        <Switch>
+          <Route to="/" exact>
+            <Home />
+          </Route>
+          <Redirect to="/" />
+        </Switch>
+      </main>
+    </>
   );
 };
 

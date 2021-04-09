@@ -1,0 +1,88 @@
+.hero {
+  height: 80vh;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+
+.hero__left,
+.hero__right {
+  min-width: 20rem;
+  width: 50%;
+  text-transform: uppercase;
+  letter-spacing: 0.3rem;
+  position: relative;
+}
+
+.hero__left h2 span {
+  color: var(--primary-dark);
+}
+
+.hero__left-circle {
+  border-radius: 50%;
+  background: var(--secondary-light);
+  position: absolute;
+  z-index: -10;
+}
+
+.circleBottom {
+  height: 15rem;
+  width: 15rem;
+  bottom: -5rem;
+  left: -2rem;
+}
+
+.circleUp {
+  height: 10rem;
+  width: 10rem;
+  top: -3rem;
+  right: 10rem;
+}
+
+.hero__left-btn {
+  margin-top: 2rem;
+  background-color: var(--primary-dark) !important;
+  color: var(--primary-light);
+  box-shadow: var(--global-shadow);
+  text-transform: uppercase;
+}
+
+@media (max-width: 735px) {
+  .hero {
+    justify-content: center;
+  }
+
+  .hero__right,
+  .hero__left {
+    width: 80%;
+    text-align: center;
+  }
+
+  .circleUp {
+    height: 7rem;
+    width: 7rem;
+    right: 0rem;
+    top: -2rem;
+  }
+
+  .circleBottom {
+    height: 10rem;
+    width: 10rem;
+    left: 2rem;
+  }
+}
+
+@media (max-width: 1365px) {
+  .circleUp {
+    height: 7rem;
+    width: 7rem;
+    right: 2rem;
+    top: 0;
+  }
+
+  .circleBottom {
+    height: 10rem;
+    width: 10rem;
+  }
+}

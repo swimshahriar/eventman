@@ -13,7 +13,6 @@ const NavBar = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   const onResizeHandler = () => {
-    console.log(window.innerWidth);
     if (window.innerWidth <= 1000) {
       setIsMobile(true);
     } else {
@@ -27,7 +26,7 @@ const NavBar = () => {
 
   return (
     <>
-      <nav className="navBar">
+      <nav className="navBar globalPadding">
         <h1 className="navBar__brand">
           <NavLink to="/">Eventman</NavLink>
         </h1>

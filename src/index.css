@@ -9,6 +9,7 @@
   /* colors */
   --primary-dark: #ef7c8e;
   --primary-light: #fae8e0;
+  --secondary-light: rgba(136, 136, 136, 0.1);
   --font-dark: #42312e;
 }
 
@@ -20,4 +21,14 @@ h5,
 h6 {
   font-family: "Overlock", serif;
   font-weight: bold;
+}
+
+.globalPadding {
+  padding: 1.2rem var(--global-padding-lg);
+}
+
+@media (max-width: 1000px) {
+  .globalPadding {
+    padding: 1rem var(--global-padding-sm);
+  }
 }

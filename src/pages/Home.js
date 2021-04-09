@@ -1,11 +1,13 @@
 import React from "react";
-import { Heading } from "@chakra-ui/react";
+
+//components
+import HeroSection from "../components/HeroSection/HeroSection";
 
 const Home = () => {
   return (
-    <div>
-      <Heading>Home</Heading>
-    </div>
+    <>
+      <HeroSection />
+    </>
   );
 };
 
