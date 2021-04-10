@@ -5,6 +5,7 @@
   --global-padding-lg: 10rem;
   --global-padding-sm: 3rem;
   --global-shadow: 0 2px 8px #888888;
+  --global-radius: 5px;
 
   /* colors */
   --primary-dark: #ef7c8e;

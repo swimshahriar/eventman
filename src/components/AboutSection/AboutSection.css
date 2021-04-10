@@ -1,0 +1,45 @@
+.about {
+  padding-top: 2rem;
+}
+
+.about > h2 {
+  padding-bottom: 4rem;
+}
+
+.about__detailContainer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.about__detailContainer-img,
+.about__detailContainer-text {
+  min-width: 20rem;
+  width: 40%;
+}
+
+.about__detailContainer-text {
+  background: var(--primary-light);
+  height: 40vh;
+  border-radius: var(--global-radius);
+  display: grid;
+  place-items: center;
+  padding: 2rem;
+}
+
+@media (max-width: 735px) {
+  .about__detailContainer {
+    justify-content: center;
+    text-align: center;
+  }
+
+  .about__detailContainer-img {
+    margin-bottom: 2rem;
+  }
+
+  .about__detailContainer-img,
+  .about__detailContainer-text {
+    width: 80%;
+  }
+}
