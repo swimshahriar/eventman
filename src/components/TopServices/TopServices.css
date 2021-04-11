@@ -1,0 +1,19 @@
+.topServices {
+  padding-top: var(--global-pd-t);
+}
+
+.topServices > h2 {
+  padding-bottom: 2rem;
+}
+
+.topServices__cards {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+@media (max-width: 735px) {
+  .topServices__cards {
+    flex-wrap: wrap;
+  }
+}

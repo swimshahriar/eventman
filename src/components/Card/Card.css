@@ -1,0 +1,32 @@
+.card {
+  text-align: center;
+  position: relative;
+}
+.card__img {
+  overflow: hidden;
+  opacity: 0.85;
+  box-shadow: var(--global-shadow);
+  border-radius: var(--global-radius);
+  transition: all 0.3s ease;
+}
+
+.card__img:hover {
+  opacity: 1;
+  cursor: pointer;
+  transform: scale(0.98);
+}
+
+.card__text {
+  position: absolute;
+  bottom: 1.5rem;
+  color: var(--primary-light);
+  font-size: 2rem;
+  font-weight: bold;
+  z-index: 10;
+}
+
+@media (max-width: 735px) {
+  .card {
+    margin-bottom: 2rem;
+  }
+}

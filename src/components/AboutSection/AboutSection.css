@@ -1,5 +1,5 @@
 .about {
-  padding-top: 2rem;
+  padding-top: var(--global-pd-t);
 }
 
 .about > h2 {
