@@ -26,6 +26,7 @@
   display: grid;
   place-items: center;
   padding: 2rem;
+  box-shadow: var(--global-shadow);
 }
 
 @media (max-width: 735px) {
