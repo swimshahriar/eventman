@@ -5,10 +5,10 @@ import "./Card.css";
 
 const Card = ({ imgSrc, link = null, text }) => {
   return (
-    <div className="card">
+    <figure className="card">
       <img src={imgSrc} alt={text} className="card__img" />
-      <p className="card__text">{text}</p>
-    </div>
+      <figcaption className="card__text">{text}</figcaption>
+    </figure>
   );
 };
 

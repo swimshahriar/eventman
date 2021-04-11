@@ -1,5 +1,6 @@
 .topServices {
   padding-top: var(--global-pd-t);
+  text-align: center;
 }
 
 .topServices > h2 {
@@ -10,6 +11,14 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
+}
+
+.topServices__btn {
+  margin: 2.5rem;
+  background-color: var(--primary-dark) !important;
+  color: var(--primary-light);
+  box-shadow: var(--global-shadow);
+  text-transform: uppercase;
 }
 
 @media (max-width: 735px) {

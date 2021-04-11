@@ -1,13 +1,13 @@
 .card {
-  text-align: center;
+  width: 30rem;
   position: relative;
 }
 .card__img {
   overflow: hidden;
   opacity: 0.85;
+  transition: all 0.3s ease;
   box-shadow: var(--global-shadow);
   border-radius: var(--global-radius);
-  transition: all 0.3s ease;
 }
 
 .card__img:hover {
@@ -18,10 +18,11 @@
 
 .card__text {
   position: absolute;
-  bottom: 1.5rem;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
   color: var(--primary-light);
-  font-size: 2rem;
-  font-weight: bold;
+  font-size: 1.8rem;
   z-index: 10;
 }
 

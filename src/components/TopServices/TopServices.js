@@ -1,5 +1,6 @@
 import React from "react";
-import { Heading } from "@chakra-ui/react";
+import { Heading, Button } from "@chakra-ui/react";
+import { TiTicket } from "react-icons/ti";
 
 // components
 import Card from "../Card/Card";
@@ -23,6 +24,9 @@ const TopServices = () => {
         <Card text="Weeding" imgSrc={weedingBG} />
         <Card text="Fashion Show" imgSrc={fashionShowBG} />
       </div>
+      <Button leftIcon={<TiTicket />} size="md" className="topServices__btn">
+        Book Now
+      </Button>
     </div>
   );
 };
