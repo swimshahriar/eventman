@@ -10,7 +10,7 @@ import HomeHero from "../../assets/home/home_hero.svg";
 
 const HeroSection = () => {
   return (
-    <div className="hero globalPadding">
+    <div className="hero globalPadding marginSection">
       <div className="hero__left">
         <div className="hero__left-circle circleUp"></div>
         <div className="hero__left-circle circleBottom"></div>

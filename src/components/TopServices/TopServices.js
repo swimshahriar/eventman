@@ -15,7 +15,7 @@ import "./TopServices.css";
 
 const TopServices = () => {
   return (
-    <div className="globalPadding topServices">
+    <div className="globalPadding topServices marginSection">
       <Heading as="h2" size="2xl" textAlign="center">
         Top Services
       </Heading>

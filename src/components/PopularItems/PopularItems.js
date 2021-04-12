@@ -14,9 +14,9 @@ import "./PopularItems.css";
 
 const PopularItems = () => {
   return (
-    <div className="globalPadding popularItems">
+    <div className="globalPadding popularItems marginSection">
       <Heading as="h2" size="2xl" textAlign="center">
-        Top Services
+        Popular Items
       </Heading>
       <div className="cards">
         <Card text="Led Wall Screen" imgSrc={ledWall} />

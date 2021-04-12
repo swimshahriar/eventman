@@ -9,7 +9,7 @@ import "./AboutSection.css";
 
 const AboutSection = () => {
   return (
-    <div className="globalPadding about">
+    <div className="globalPadding about marginSection">
       <Heading as="h2" size="2xl" textAlign="center">
         About Us
       </Heading>
