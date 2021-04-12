@@ -34,3 +34,24 @@ h6 {
     padding: 1rem var(--global-padding-sm);
   }
 }
+
+.cards {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.cards__btn {
+  margin: 2.5rem;
+  background-color: var(--primary-dark) !important;
+  color: var(--primary-light);
+  box-shadow: var(--global-shadow);
+  text-transform: uppercase;
+}
+
+@media (max-width: 735px) {
+  .cards {
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+}

@@ -30,4 +30,7 @@
   .card {
     margin-bottom: 2rem;
   }
+  .card__text {
+    font-size: 1.5rem;
+  }
 }

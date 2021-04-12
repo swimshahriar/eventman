@@ -19,12 +19,12 @@ const TopServices = () => {
       <Heading as="h2" size="2xl" textAlign="center">
         Top Services
       </Heading>
-      <div className="topServices__cards">
+      <div className="cards">
         <Card text="Conference" imgSrc={conferenceBG} />
         <Card text="Weeding" imgSrc={weedingBG} />
         <Card text="Fashion Show" imgSrc={fashionShowBG} />
       </div>
-      <Button leftIcon={<TiTicket />} size="md" className="topServices__btn">
+      <Button leftIcon={<TiTicket />} size="md" className="cards__btn">
         Book Now
       </Button>
     </div>
