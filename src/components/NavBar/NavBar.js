@@ -94,13 +94,13 @@ const NavBar = () => {
               className="mobileNav__list-item"
               onClick={() => setIsMenuOpen(false)}
             >
-              <NavLink to="/#about">About</NavLink>
+              <a href="/#about">About</a>
             </li>
             <li
               className="mobileNav__list-item"
               onClick={() => setIsMenuOpen(false)}
             >
-              <NavLink to="/#contact">Contact</NavLink>
+              <a href="/#contact">Contact</a>
             </li>
             <li
               className="mobileNav__list-item"
