@@ -24,6 +24,13 @@ const NavBar = () => {
     window.onresize = onResizeHandler;
   }, []);
 
+  // on mobile (modal open) disable scroll
+  if (isMenuOpen) {
+    document.documentElement.style.overflowY = "hidden";
+  } else {
+    document.documentElement.style.overflowY = "auto";
+  }
+
   return (
     <>
       <nav className="navBar globalPadding">
