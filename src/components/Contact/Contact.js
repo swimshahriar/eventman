@@ -9,7 +9,7 @@ import "./Contact.css";
 
 const Contact = () => {
   return (
-    <div className="globalPadding about marginSection">
+    <div className="globalPadding about marginSection" id="contact">
       <Heading as="h2" size="2xl" textAlign="center">
         Contact Us
       </Heading>

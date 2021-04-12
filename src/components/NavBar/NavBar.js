@@ -41,10 +41,10 @@ const NavBar = () => {
               <NavLink to="/services">Services</NavLink>
             </li>
             <li className="navBar__list-item">
-              <NavLink to="/#about">About</NavLink>
+              <a href="/#about">About</a>
             </li>
             <li className="navBar__list-item">
-              <NavLink to="/#contact">Contact</NavLink>
+              <a href="/#contact">Contact</a>
             </li>
             <li className="navBar__list-item">
               <NavLink to="/auth">Login/Register</NavLink>
