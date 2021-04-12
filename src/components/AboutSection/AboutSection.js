@@ -13,13 +13,9 @@ const AboutSection = () => {
       <Heading as="h2" size="2xl" textAlign="center">
         About Us
       </Heading>
-      <div className="about__detailContainer">
-        <Image
-          src={AboutSvg}
-          alt="about us"
-          className="about__detailContainer-img"
-        />
-        <Text className="about__detailContainer-text" fontSize="xl">
+      <div className="detailContainer">
+        <Image src={AboutSvg} alt="about us" className="detailContainer-img" />
+        <Text className="detailContainer-text" fontSize="xl">
           Lorem ipsum dolor sit amet consectetur adipisicing elit. Sequi eos
           deserunt corrupti deleniti dolores pariatur sapiente illo ut sint
           atque ducimus quia sed nulla, libero cumque quasi. Magni, atque
