@@ -1,0 +1,23 @@
+.footer {
+  background: var(--primary-light);
+  margin-top: 4rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.footer__item {
+  padding: 4rem 0;
+}
+
+.footer__item > h4 {
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+
+.footer__item-links {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+}
