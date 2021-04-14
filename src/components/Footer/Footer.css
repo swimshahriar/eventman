@@ -21,3 +21,29 @@
   justify-content: center;
   align-items: flex-start;
 }
+
+.footer__item-links > a {
+  padding: 5px 0;
+}
+
+.footer__copyright {
+  background: var(--primary-dark);
+  text-align: center;
+  padding: 1rem 0;
+  font-size: 1.3rem;
+  font-weight: bold;
+  color: var(--primary-light);
+}
+
+@media (max-width: 600px) {
+  .footer {
+    flex-direction: column;
+  }
+  .footer__item {
+    text-align: center;
+    padding: 1rem 0;
+  }
+  .footer__item-links {
+    align-items: center;
+  }
+}

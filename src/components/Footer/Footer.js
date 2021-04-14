@@ -12,9 +12,9 @@ const Footer = () => {
           <h4>Links</h4>
           <div className="footer__item-links">
             <Link to="/">Home</Link>
-            <Link to="/">About</Link>
-            <Link to="/">Contact</Link>
-            <Link to="/">Account</Link>
+            <Link to="/#about">About</Link>
+            <Link to="/#contact">Contact</Link>
+            <Link to="/account">Account</Link>
           </div>
         </div>
         <div className="footer__item">
@@ -29,11 +29,14 @@ const Footer = () => {
         <div className="footer__item">
           <h4>Socials</h4>
           <div className="footer__item-links">
-            <Link to="/">Facebook</Link>
-            <Link to="/">Twitter</Link>
-            <Link to="/">Instagram</Link>
+            <a href="https://facebook.com" target="blank">Facebook</a>
+            <a href="https://twitter.com" target="blank">Twitter</a>
+            <a href="https://instagram.com" target="blank">Instagram</a>
           </div>
         </div>
+      </div>
+      <div className="footer__copyright">
+        <p>© {new Date().getFullYear()} Eventman.</p>
       </div>
     </>
   );
