@@ -7,6 +7,8 @@ import Footer from './components/Footer/Footer';
 
 // pacges
 import Home from './pages/Home';
+import Auth from './pages/Auth'
+import Services from './pages/Services';
 
 const App = () => {
   return (
@@ -16,8 +18,14 @@ const App = () => {
       </header>
       <main>
         <Switch>
-          <Route to="/" exact>
+          <Route path="/" exact>
             <Home />
+          </Route>
+          <Route path="/auth">
+            <Auth/>
+          </Route>
+          <Route path="/services">
+            <Services/>
           </Route>
           <Redirect to="/" />
         </Switch>
