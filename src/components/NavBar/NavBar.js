@@ -1,12 +1,16 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useContext } from "react";
 import { NavLink } from "react-router-dom";
 import { HiMenuAlt3 } from "react-icons/hi";
 import { AiOutlineClose } from "react-icons/ai";
+
+// global state
+import { globalState } from "../../state/globalState";
 
 // css
 import "./NavBar.css";
 
 const NavBar = () => {
+  const { user, logout } = useContext(globalState);
   const [isMobile, setIsMobile] = useState(
     window.innerWidth <= 1000 ? true : false
   );
@@ -53,9 +57,22 @@ const NavBar = () => {
             <li className="navBar__list-item">
               <a href="/#contact">Contact</a>
             </li>
-            <li className="navBar__list-item">
-              <NavLink to="/auth">Login/Register</NavLink>
-            </li>
+            {user ? (
+              <>
+                <li className="navBar__list-item">
+                  <NavLink to="/user-dashboard">Dashboard</NavLink>
+                </li>
+                <li className="navBar__list-item">
+                  <NavLink to="#" onClick={logout}>
+                    Logout
+                  </NavLink>
+                </li>
+              </>
+            ) : (
+              <li className="navBar__list-item">
+                <NavLink to="/auth">Login/Register</NavLink>
+              </li>
+            )}
           </ul>
         )}
         {isMobile && (
@@ -102,12 +119,31 @@ const NavBar = () => {
             >
               <a href="/#contact">Contact</a>
             </li>
-            <li
-              className="mobileNav__list-item"
-              onClick={() => setIsMenuOpen(false)}
-            >
-              <NavLink to="/auth">Login/Register</NavLink>
-            </li>
+            {user ? (
+              <>
+                <li
+                  className="mobileNav__list-item"
+                  onClick={() => setIsMenuOpen(false)}
+                >
+                  <NavLink to="/user-dashboard">Dashboard</NavLink>
+                </li>
+                <li
+                  className="mobileNav__list-item"
+                  onClick={() => setIsMenuOpen(false)}
+                >
+                  <NavLink to="#" onClick={logout}>
+                    Logout
+                  </NavLink>
+                </li>
+              </>
+            ) : (
+              <li
+                className="mobileNav__list-item"
+                onClick={() => setIsMenuOpen(false)}
+              >
+                <NavLink to="/auth">Login/Register</NavLink>
+              </li>
+            )}
           </ul>
         </div>
       )}

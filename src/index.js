@@ -3,6 +3,9 @@ import ReactDOM from "react-dom";
 import { ChakraProvider } from "@chakra-ui/react";
 import { BrowserRouter } from "react-router-dom";
 
+// global state provider
+import GlobalStateProvider from "./state/globalState";
+
 import App from "./App";
 
 import { theme } from "./theme";
@@ -11,11 +14,13 @@ import "./index.css";
 
 ReactDOM.render(
   <React.StrictMode>
-    <BrowserRouter>
-      <ChakraProvider theme={theme}>
-        <App />
-      </ChakraProvider>
-    </BrowserRouter>
+    <GlobalStateProvider>
+      <BrowserRouter>
+        <ChakraProvider theme={theme}>
+          <App />
+        </ChakraProvider>
+      </BrowserRouter>
+    </GlobalStateProvider>
   </React.StrictMode>,
   document.getElementById("root")
 );

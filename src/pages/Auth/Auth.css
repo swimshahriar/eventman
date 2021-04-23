@@ -1,0 +1,36 @@
+.auth {
+  text-align: center;
+}
+
+.auth > h2 {
+  font-size: 3rem;
+  margin-top: 2rem;
+}
+
+.auth__form {
+  width: 70%;
+  margin: 2rem auto;
+}
+
+.auth__form_error {
+  color: red;
+}
+
+.auth__form_input {
+  margin-top: 2rem;
+}
+
+.auth__bottom_text {
+  font-size: 1.2rem;
+  padding: 1rem;
+}
+
+@media (max-width: 768px) {
+  .auth > h2 {
+    font-size: 2.5rem;
+  }
+
+  .auth__form {
+    width: 100%;
+  }
+}
