@@ -1,7 +1,7 @@
 import React, { createContext, useState, useEffect } from "react";
 
 // firebase
-import firebase from "../firebase";
+import { fbAuth } from "../firebase";
 
 export const globalState = createContext({
   user: null,
@@ -16,35 +16,26 @@ const GlobalStateProvider = (props) => {
   const [loading, setLoading] = useState(true);
 
   const loginHandler = (email, pass) => {
-    return firebase
-      .auth()
-      .signInWithEmailAndPassword(email, pass)
-      .then((res) => {
-        setUser(res.user);
+    return fbAuth.signInWithEmailAndPassword(email, pass).then((res) => {
+      setUser(res.user);
 
-        return res.user;
-      });
+      return res.user;
+    });
   };
 
   const registerHandler = (email, pass) => {
-    return firebase
-      .auth()
-      .createUserWithEmailAndPassword(email, pass)
-      .then((res) => {
-        setUser(res.user);
-        return res.user;
-      });
+    return fbAuth.createUserWithEmailAndPassword(email, pass).then((res) => {
+      setUser(res.user);
+      return res.user;
+    });
   };
 
   const logoutHandler = () => {
-    firebase
-      .auth()
-      .signOut()
-      .then(() => setUser(null));
+    fbAuth.signOut().then(() => setUser(null));
   };
 
   useEffect(() => {
-    const unsubscribe = firebase.auth().onAuthStateChanged((user) => {
+    const unsubscribe = fbAuth.onAuthStateChanged((user) => {
       if (user) {
         setUser(user);
       } else {
