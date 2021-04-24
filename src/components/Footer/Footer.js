@@ -1,8 +1,8 @@
-import React from 'react';
-import { Link } from 'react-router-dom';
+import React from "react";
+import { Link } from "react-router-dom";
 
 // styles
-import './Footer.css';
+import "./Footer.css";
 
 const Footer = () => {
   return (
@@ -14,7 +14,7 @@ const Footer = () => {
             <Link to="/">Home</Link>
             <Link to="/#about">About</Link>
             <Link to="/#contact">Contact</Link>
-            <Link to="/account">Account</Link>
+            <Link to="/user-dashboard">Dashboard</Link>
           </div>
         </div>
         <div className="footer__item">
@@ -29,9 +29,15 @@ const Footer = () => {
         <div className="footer__item">
           <h4>Socials</h4>
           <div className="footer__item-links">
-            <a href="https://facebook.com" target="blank">Facebook</a>
-            <a href="https://twitter.com" target="blank">Twitter</a>
-            <a href="https://instagram.com" target="blank">Instagram</a>
+            <a href="https://facebook.com" target="blank">
+              Facebook
+            </a>
+            <a href="https://twitter.com" target="blank">
+              Twitter
+            </a>
+            <a href="https://instagram.com" target="blank">
+              Instagram
+            </a>
           </div>
         </div>
       </div>

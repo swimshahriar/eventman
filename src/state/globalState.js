@@ -13,25 +13,25 @@ export const globalState = createContext({
 
 const GlobalStateProvider = (props) => {
   const [user, setUser] = useState(null);
-  const [loading, setLoading] = useState(false);
+  const [loading, setLoading] = useState(true);
 
   const loginHandler = (email, pass) => {
-    firebase
+    return firebase
       .auth()
-      .createUserWithEmailAndPassword(email, pass)
+      .signInWithEmailAndPassword(email, pass)
       .then((res) => {
-        setUser(setUser(res.user));
+        setUser(res.user);
 
         return res.user;
       });
   };
 
   const registerHandler = (email, pass) => {
-    firebase
+    return firebase
       .auth()
-      .signInWithEmailAndPassword(email, pass)
+      .createUserWithEmailAndPassword(email, pass)
       .then((res) => {
-        setUser(setUser(res.user));
+        setUser(res.user);
         return res.user;
       });
   };

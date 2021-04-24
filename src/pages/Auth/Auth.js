@@ -27,8 +27,8 @@ const Auth = () => {
   const handleClick = () => setShow(!show);
 
   const { email, pass } = accountInfo;
-  const loginHandler = (e) => {
-    e.preventDefault();
+  const loginHandler = () => {
+    setError("");
     setIsLoading(true);
     login(email, pass)
       .then(() => {
@@ -42,8 +42,8 @@ const Auth = () => {
       });
   };
 
-  const registerHandler = (e) => {
-    e.preventDefault();
+  const registerHandler = () => {
+    setError("");
     setIsLoading(true);
     register(email, pass)
       .then(() => {
@@ -74,6 +74,8 @@ const Auth = () => {
           onChange={(e) =>
             setAccountInfo({ ...accountInfo, email: e.target.value })
           }
+          required
+          type="email"
         />
         <InputGroup size="lg" className="auth__form_input">
           <Input
@@ -84,6 +86,7 @@ const Auth = () => {
             onChange={(e) =>
               setAccountInfo({ ...accountInfo, pass: e.target.value })
             }
+            required
           />
           <InputRightElement width="4.5rem">
             <Button h="1.75rem" size="sm" onClick={handleClick}>
@@ -93,18 +96,14 @@ const Auth = () => {
         </InputGroup>
 
         {isLoginMode ? (
-          <Button
-            size="md"
-            className="hero__left-btn"
-            onSubmit={(e) => loginHandler(e)}
-          >
+          <Button size="md" className="hero__left-btn" onClick={loginHandler}>
             Login
           </Button>
         ) : (
           <Button
             size="md"
             className="hero__left-btn"
-            onSubmit={(e) => registerHandler(e)}
+            onClick={registerHandler}
           >
             Register
           </Button>
