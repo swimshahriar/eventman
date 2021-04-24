@@ -10,7 +10,7 @@ import Footer from "./components/Footer/Footer";
 import Home from "./pages/Home";
 import Auth from "./pages/Auth/Auth";
 import Services from "./pages/Services";
-import UserDashboard from "./pages/UserDashboard";
+import UserDashboard from "./pages/UserDashboard/UserDashboard";
 
 // global state
 import { globalState } from "./state/globalState";

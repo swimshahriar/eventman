@@ -31,10 +31,14 @@ const Auth = () => {
     setError("");
     setIsLoading(true);
     login(email, pass)
-      .then(() => {
+      .then((user) => {
         setAccountInfo({ email: "", pass: "" });
         setIsLoading(false);
-        history.push("/user-dashboard");
+        if (user.email === "admin@eventman.com") {
+          history.push("/admin");
+        } else {
+          history.push("/user-dashboard");
+        }
       })
       .catch((err) => {
         setIsLoading(false);
