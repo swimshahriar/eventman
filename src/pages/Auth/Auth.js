@@ -50,13 +50,13 @@ const Auth = () => {
     setError("");
     setIsLoading(true);
     register(email, pass)
-      .then(() => {
+      .then((user) => {
         setAccountInfo({ email: "", pass: "" });
-        setIsLoading(true);
+        setIsLoading(false);
         history.push("/user-dashboard");
       })
       .catch((err) => {
-        setIsLoading(true);
+        setIsLoading(false);
         setError(err.message);
       });
   };

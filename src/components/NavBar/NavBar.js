@@ -57,10 +57,21 @@ const NavBar = () => {
             <li className="navBar__list-item">
               <a href="/#contact">Contact</a>
             </li>
-            {user ? (
+            {user && user.email !== "admin@eventman.com" ? (
               <>
                 <li className="navBar__list-item">
                   <NavLink to="/user-dashboard">Dashboard</NavLink>
+                </li>
+                <li className="navBar__list-item">
+                  <NavLink to="#" onClick={logout}>
+                    Logout
+                  </NavLink>
+                </li>
+              </>
+            ) : user && user.email === "admin@eventman.com" ? (
+              <>
+                <li className="navBar__list-item">
+                  <NavLink to="/admin">Admin</NavLink>
                 </li>
                 <li className="navBar__list-item">
                   <NavLink to="#" onClick={logout}>
@@ -119,13 +130,30 @@ const NavBar = () => {
             >
               <a href="/#contact">Contact</a>
             </li>
-            {user ? (
+            {user && user.email !== "admin@eventman.com" ? (
               <>
                 <li
                   className="mobileNav__list-item"
                   onClick={() => setIsMenuOpen(false)}
                 >
                   <NavLink to="/user-dashboard">Dashboard</NavLink>
+                </li>
+                <li
+                  className="mobileNav__list-item"
+                  onClick={() => setIsMenuOpen(false)}
+                >
+                  <NavLink to="#" onClick={logout}>
+                    Logout
+                  </NavLink>
+                </li>
+              </>
+            ) : user && user.email === "admin@eventman.com" ? (
+              <>
+                <li
+                  className="mobileNav__list-item"
+                  onClick={() => setIsMenuOpen(false)}
+                >
+                  <NavLink to="/admin">Admin</NavLink>
                 </li>
                 <li
                   className="mobileNav__list-item"

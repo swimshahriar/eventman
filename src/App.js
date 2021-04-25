@@ -11,6 +11,7 @@ import Home from "./pages/Home";
 import Auth from "./pages/Auth/Auth";
 import Services from "./pages/Services";
 import UserDashboard from "./pages/UserDashboard/UserDashboard";
+import Admin from "./pages/Admin/Admin";
 
 // global state
 import { globalState } from "./state/globalState";
@@ -20,7 +21,7 @@ const App = () => {
 
   let routes;
 
-  if (user) {
+  if (user && user.email !== "admin@eventman.com") {
     routes = (
       <Switch>
         <Route path="/" exact>
@@ -28,6 +29,21 @@ const App = () => {
         </Route>
         <Route path="/user-dashboard">
           <UserDashboard />
+        </Route>
+        <Route path="/services">
+          <Services />
+        </Route>
+        <Redirect to="/" />
+      </Switch>
+    );
+  } else if (user && user.email === "admin@eventman.com") {
+    routes = (
+      <Switch>
+        <Route path="/" exact>
+          <Home />
+        </Route>
+        <Route path="/admin">
+          <Admin />
         </Route>
         <Route path="/services">
           <Services />
