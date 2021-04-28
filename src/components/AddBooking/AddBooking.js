@@ -7,12 +7,14 @@ import {
   NumberInputField,
   Select,
   Button,
+  useToast,
 } from "@chakra-ui/react";
 
 // firebase
 import { firestore } from "../../firebase";
 
 const AddBooking = () => {
+  const toast = useToast();
   const [contents, setContents] = useState({
     title: "",
     venue: "",
@@ -43,6 +45,12 @@ const AddBooking = () => {
           desc: "",
         });
         setLoading(false);
+        toast({
+          title: "Success",
+          status: "success",
+          duration: 2000,
+          isClosable: true,
+        });
       })
       .catch((err) => {
         setLoading(false);
@@ -122,9 +130,7 @@ const AddBooking = () => {
           )}
         </form>
         <div>
-          <Heading as="h2" pt="10">
-            Lists
-          </Heading>
+          <Heading as="h2" pt="10"></Heading>
         </div>
       </div>
     </div>
