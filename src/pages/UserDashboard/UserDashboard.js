@@ -5,7 +5,6 @@ import { Heading, Button } from "@chakra-ui/react";
 import { globalState } from "../../state/globalState";
 
 // components
-import Booking from "../../components/Booking/Booking";
 import Messaging from "../../components/Messaging/Messaging";
 
 // styles
@@ -41,7 +40,7 @@ const UserDashboard = () => {
             Messages
           </Button>
         </div>
-        {selectedTab === "Booking" ? <Booking /> : <Messaging />}
+        {selectedTab === "Booking" ? <h1>Bookings</h1> : <Messaging />}
       </div>
     </div>
   );
