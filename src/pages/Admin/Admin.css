@@ -1,0 +1,28 @@
+.add-booking__section {
+  margin-top: 3rem;
+}
+
+.error {
+  color: red;
+  font-size: 1rem;
+  margin-top: 1rem;
+}
+
+.add-booking__section-form {
+  margin: 1rem auto;
+  width: 60%;
+}
+
+.add-booking__section-form input {
+  margin: 1rem 0;
+}
+
+.add-booking__section-form select {
+  margin: 1rem 0;
+}
+
+@media (max-width: 768px) {
+  .add-booking__section-form {
+    width: 100%;
+  }
+}

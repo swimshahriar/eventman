@@ -1,7 +1,134 @@
-import React from "react";
+import React, { useState } from "react";
+import {
+  Heading,
+  Input,
+  Textarea,
+  NumberInput,
+  NumberInputField,
+  Select,
+  Button,
+} from "@chakra-ui/react";
+
+// firebase
+import { firestore } from "../../firebase";
 
 const AddBooking = () => {
-  return <div>Add Booking</div>;
+  const [contents, setContents] = useState({
+    title: "",
+    venue: "",
+    category: "",
+    imgUrl: "",
+    price: 0,
+    desc: "",
+  });
+  const [error, setError] = useState("");
+  const [loading, setLoading] = useState(false);
+
+  const addBookingHandler = () => {
+    setLoading(true);
+    const dbModel = {
+      ...contents,
+      createdAt: new Date().toDateString(),
+    };
+    firestore
+      .collection("bookings")
+      .add(dbModel)
+      .then(() => {
+        setContents({
+          title: "",
+          venue: "",
+          category: "",
+          imgUrl: "",
+          price: 0,
+          desc: "",
+        });
+        setLoading(false);
+      })
+      .catch((err) => {
+        setLoading(false);
+        setError(err.message);
+      });
+  };
+
+  return (
+    <div className="add-booking">
+      <Heading as="h2">Add Booking</Heading>
+
+      <div className="add-booking__section">
+        {error && <p className="error">{error}</p>}
+        <form className="add-booking__section-form">
+          <Input
+            placeholder="Title"
+            required
+            size="lg"
+            value={contents.title}
+            onChange={(e) =>
+              setContents({ ...contents, title: e.target.value })
+            }
+          />
+          <Select
+            placeholder="Venue"
+            size="lg"
+            value={contents.venue}
+            onChange={(e) =>
+              setContents({ ...contents, venue: e.target.value })
+            }
+          >
+            <option value="venue-1">Venue-1</option>
+            <option value="venue-2">venue-2</option>
+            <option value="venue-3">venue-3</option>
+          </Select>
+          <Select
+            placeholder="Category"
+            size="lg"
+            value={contents.category}
+            onChange={(e) =>
+              setContents({ ...contents, category: e.target.value })
+            }
+          >
+            <option value="weeding">Weeding</option>
+            <option value="birthday">Birthday</option>
+            <option value="fashion">Fashion</option>
+          </Select>
+          <Input
+            placeholder="Image Url"
+            required
+            size="lg"
+            value={contents.imgUrl}
+            onChange={(e) =>
+              setContents({ ...contents, imgUrl: e.target.value })
+            }
+          />
+          <NumberInput size="lg" required defaultValue={+contents.price}>
+            <NumberInputField
+              onChange={(e) =>
+                setContents({ ...contents, price: +e.target.value })
+              }
+            />
+          </NumberInput>
+          <Textarea
+            placeholder="Description"
+            required
+            size="lg"
+            value={contents.desc}
+            onChange={(e) => setContents({ ...contents, desc: e.target.value })}
+          />
+          {loading ? (
+            <p className="error">Loading...</p>
+          ) : (
+            <Button className="hero__left-btn" onClick={addBookingHandler}>
+              Add
+            </Button>
+          )}
+        </form>
+        <div>
+          <Heading as="h2" pt="10">
+            Lists
+          </Heading>
+        </div>
+      </div>
+    </div>
+  );
 };
 
 export default AddBooking;
