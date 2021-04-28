@@ -5,7 +5,6 @@ import { Heading, Button } from "@chakra-ui/react";
 import { globalState } from "../../state/globalState";
 
 // components
-import Booking from "../../components/Booking/Booking";
 import Messaging from "../../components/Messaging/Messaging";
 import AddBooking from "../../components/AddBooking/AddBooking";
 
@@ -13,7 +12,7 @@ import AddBooking from "../../components/AddBooking/AddBooking";
 import "./Admin.css";
 
 const tabs = {
-  Booking: <Booking />,
+  Booking: <h1>No Bookings yet!</h1>,
   Messaging: <Messaging />,
   AddBooking: <AddBooking />,
 };
