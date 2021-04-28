@@ -1,0 +1,33 @@
+.booking {
+  width: 60%;
+  margin: 2rem auto;
+  box-shadow: var(--global-shadow);
+  padding: 1.5rem;
+  border-radius: var(--global-radius);
+}
+
+.booking > img {
+  width: 100%;
+}
+
+.booking__title {
+  margin-top: 1rem;
+}
+
+.booking__details {
+  display: flex;
+  justify-content: space-around;
+  font-size: 1.3rem;
+  margin-top: 1rem;
+}
+
+.booking__desc {
+  font-size: 1.2rem;
+  margin-top: 1rem;
+}
+
+@media (max-width: 768px) {
+  .booking {
+    width: 100%;
+  }
+}

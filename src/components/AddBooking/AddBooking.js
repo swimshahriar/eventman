@@ -9,9 +9,16 @@ import {
   Button,
   useToast,
 } from "@chakra-ui/react";
+import { useCollectionData } from "react-firebase-hooks/firestore";
 
 // firebase
 import { firestore } from "../../firebase";
+
+// components
+import Booking from "../Booking/Booking";
+
+// styles
+import "./AddBooking.css"
 
 const AddBooking = () => {
   const toast = useToast();
@@ -57,6 +64,12 @@ const AddBooking = () => {
         setError(err.message);
       });
   };
+
+  // fetching list
+  const listRef = firestore.collection("bookings");
+  const query = listRef.orderBy("createdAt");
+
+  const [lists] = useCollectionData(query, { idField: "id" });
 
   return (
     <div className="add-booking">
@@ -130,7 +143,13 @@ const AddBooking = () => {
           )}
         </form>
         <div>
-          <Heading as="h2" pt="10"></Heading>
+          <Heading as="h2" pt="10" pb="10">
+            Lists
+          </Heading>
+          <div className="lists">
+            {lists &&
+              lists.map((item) => <Booking item={item} key={item.id} />)}
+          </div>
         </div>
       </div>
     </div>

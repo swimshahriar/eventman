@@ -1,0 +1,7 @@
+.lists {
+  border: 3px solid var(--primary-dark);
+  border-radius: var(--global-radius);
+  box-shadow: var(--global-shadow);
+  overflow-y: scroll;
+  height: 50rem;
+}
