@@ -18,7 +18,7 @@ import { firestore } from "../../firebase";
 import Booking from "../Booking/Booking";
 
 // styles
-import "./AddBooking.css"
+import "./AddBooking.css";
 
 const AddBooking = () => {
   const toast = useToast();
@@ -34,6 +34,17 @@ const AddBooking = () => {
   const [loading, setLoading] = useState(false);
 
   const addBookingHandler = () => {
+    if (
+      contents.title === "" ||
+      contents.venue === "" ||
+      contents.category === "" ||
+      contents.imgUrl === "" ||
+      contents.price === 0 ||
+      contents.desc === ""
+    ) {
+      return alert("Fill the forms");
+    }
+
     setLoading(true);
     const dbModel = {
       ...contents,
@@ -80,7 +91,7 @@ const AddBooking = () => {
         <form className="add-booking__section-form">
           <Input
             placeholder="Title"
-            required
+            isRequired
             size="lg"
             value={contents.title}
             onChange={(e) =>
@@ -91,6 +102,7 @@ const AddBooking = () => {
             placeholder="Venue"
             size="lg"
             value={contents.venue}
+            isRequired
             onChange={(e) =>
               setContents({ ...contents, venue: e.target.value })
             }
@@ -103,6 +115,7 @@ const AddBooking = () => {
             placeholder="Category"
             size="lg"
             value={contents.category}
+            isRequired
             onChange={(e) =>
               setContents({ ...contents, category: e.target.value })
             }
@@ -113,14 +126,14 @@ const AddBooking = () => {
           </Select>
           <Input
             placeholder="Image Url"
-            required
+            isRequired
             size="lg"
             value={contents.imgUrl}
             onChange={(e) =>
               setContents({ ...contents, imgUrl: e.target.value })
             }
           />
-          <NumberInput size="lg" required defaultValue={+contents.price}>
+          <NumberInput size="lg" isRequired defaultValue={+contents.price}>
             <NumberInputField
               onChange={(e) =>
                 setContents({ ...contents, price: +e.target.value })
@@ -129,7 +142,7 @@ const AddBooking = () => {
           </NumberInput>
           <Textarea
             placeholder="Description"
-            required
+            isRequired
             size="lg"
             value={contents.desc}
             onChange={(e) => setContents({ ...contents, desc: e.target.value })}
