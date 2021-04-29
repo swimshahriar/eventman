@@ -29,6 +29,11 @@ const Auth = () => {
   const { email, pass } = accountInfo;
   const loginHandler = () => {
     setError("");
+    if (email === "" || pass === "") {
+      setError("Fill the form");
+      return;
+    }
+
     setIsLoading(true);
     login(email, pass)
       .then((user) => {
@@ -48,6 +53,10 @@ const Auth = () => {
 
   const registerHandler = () => {
     setError("");
+    if (email === "" || pass === "") {
+      setError("Fill the form");
+      return;
+    }
     setIsLoading(true);
     register(email, pass)
       .then((user) => {
