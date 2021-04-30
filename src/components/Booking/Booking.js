@@ -1,10 +1,40 @@
-import React from "react";
-import { Heading } from "@chakra-ui/react";
+import React, { useContext } from "react";
+import { Heading, Button, useToast } from "@chakra-ui/react";
+
+// global state
+import { globalState } from "../../state/globalState";
+
+// firebase
+import { firestore } from "../../firebase";
 
 //styles
 import "./Booking.css";
 
 const Booking = ({ item }) => {
+  const { user } = useContext(globalState);
+  const toast = useToast();
+
+  let isAdmin = false;
+  if (user.email === "admin@eventman.com") {
+    isAdmin = true;
+  }
+
+  const deleteHandler = () => {
+    firestore
+      .collection("bookings")
+      .doc(item.id)
+      .delete()
+      .then(() =>
+        toast({
+          title: "Success",
+          status: "success",
+          duration: 2000,
+          isClosable: true,
+        })
+      )
+      .catch((error) => alert(error.message));
+  };
+
   return (
     <div className="booking">
       <img src={item.imgUrl} alt={item.title} />
@@ -18,6 +48,13 @@ const Booking = ({ item }) => {
           <p>Price: {item.price} Tk</p>
         </div>
         <p className="booking__desc">Description: {item.desc}</p>
+      </div>
+      <div className="booking__btn">
+        {isAdmin ? (
+          <Button onClick={deleteHandler}>Delete</Button>
+        ) : (
+          <Button>Book</Button>
+        )}
       </div>
     </div>
   );

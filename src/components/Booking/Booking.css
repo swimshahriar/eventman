@@ -26,6 +26,10 @@
   margin-top: 1rem;
 }
 
+.booking__btn {
+  margin: 1.5rem;
+}
+
 @media (max-width: 768px) {
   .booking {
     width: 100%;
