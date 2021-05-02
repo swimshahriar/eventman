@@ -1,0 +1,9 @@
+.checkout__form {
+  width: 60%;
+  margin: 0 auto;
+}
+
+.checkout__phone,
+.checkout__notes {
+  margin: 1.5rem 0;
+}

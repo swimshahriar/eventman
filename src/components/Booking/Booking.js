@@ -1,5 +1,6 @@
 import React, { useContext } from "react";
 import { Heading, Button, useToast } from "@chakra-ui/react";
+import { useHistory } from "react-router-dom";
 
 // global state
 import { globalState } from "../../state/globalState";
@@ -12,6 +13,7 @@ import "./Booking.css";
 
 const Booking = ({ item }) => {
   const { user } = useContext(globalState);
+  const history = useHistory();
   const toast = useToast();
 
   let isAdmin = false;
@@ -53,7 +55,9 @@ const Booking = ({ item }) => {
         {isAdmin ? (
           <Button onClick={deleteHandler}>Delete</Button>
         ) : (
-          <Button>Book</Button>
+          <Button onClick={() => history.push(`/checkout/${item.id}`)}>
+            Book
+          </Button>
         )}
       </div>
     </div>
