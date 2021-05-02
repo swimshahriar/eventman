@@ -6,6 +6,7 @@ import { globalState } from "../../state/globalState";
 
 // components
 import Messaging from "../../components/Messaging/Messaging";
+import DashboardBooking from "../../components/DashboardBooking/DashboardBooking";
 
 // styles
 import "./UserDashboard.css";
@@ -40,7 +41,11 @@ const UserDashboard = () => {
             Messages
           </Button>
         </div>
-        {selectedTab === "Booking" ? <h1>Bookings</h1> : <Messaging />}
+        {selectedTab === "Booking" ? (
+          <DashboardBooking user={user} />
+        ) : (
+          <Messaging />
+        )}
       </div>
     </div>
   );
