@@ -1,0 +1,11 @@
+.booking-card {
+  box-shadow: var(--global-shadow);
+  border-radius: var(--global-radius);
+  padding: 2rem 1.5rem;
+  margin: 1.5rem 0;
+  font-size: 1.3rem;
+}
+
+.booking-card span {
+  font-weight: bold;
+}

@@ -52,6 +52,7 @@ const Checkout = () => {
       phone: phone,
       date: date,
       notes: notes || "",
+      status: "pending",
     };
 
     firestore

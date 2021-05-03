@@ -36,7 +36,7 @@ const DashboardBooking = ({ user }) => {
         snap.forEach((doc) => {
           documents.push({ ...doc.data(), id: doc.id });
         });
-        setLists(documents);
+        setLists([...documents]);
       });
     return () => unsub();
   }, [uid, email]);
