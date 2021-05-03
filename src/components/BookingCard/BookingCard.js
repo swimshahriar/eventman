@@ -1,9 +1,21 @@
-import React from "react";
+import React, { useContext, useState } from "react";
+import { Button, Select } from "@chakra-ui/react";
+
+// firestore
+import { firestore } from "../../firebase";
+
+// global state
+import { globalState } from "../../state/globalState";
 
 // styles
 import "./BookingCard.css";
 
 const BookingCard = ({ info }) => {
+  const { user } = useContext(globalState);
+  const isAdmin = user.email === "admin@eventman.com" ? true : false;
+
+  const [selectOption, setSelectOption] = useState(null);
+
   return (
     <div className="booking-card">
       <h4>
@@ -33,6 +45,27 @@ const BookingCard = ({ info }) => {
       <p>
         <span>Price:</span> {info.price} Tk
       </p>
+
+      {isAdmin && (
+        <div>
+          <Select
+            placeholder="select a option"
+            size="lg"
+            value={selectOption}
+            isRequired
+            onChange={(e) => {
+              firestore
+                .collection("confirmBookings")
+                .doc(info.id)
+                .update({ status: e.target.value });
+            }}
+          >
+            <option value="pending">Pending</option>
+            <option value="accepted">Accepted</option>
+            <option value="canceled">Canceled</option>
+          </Select>
+        </div>
+      )}
     </div>
   );
 };

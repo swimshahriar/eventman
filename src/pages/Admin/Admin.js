@@ -7,19 +7,20 @@ import { globalState } from "../../state/globalState";
 // components
 import Messaging from "../../components/Messaging/Messaging";
 import AddBooking from "../../components/AddBooking/AddBooking";
+import DashboardBooking from "../../components/DashboardBooking/DashboardBooking";
 
 // styles
 import "./Admin.css";
 
-const tabs = {
-  Booking: <h1>No Bookings yet!</h1>,
-  Messaging: <Messaging />,
-  AddBooking: <AddBooking />,
-};
-
 const Admin = () => {
   const { user } = useContext(globalState);
   const [selectedTab, setSelectedTab] = useState("AddBooking");
+
+  const tabs = {
+    Booking: <DashboardBooking user={user} />,
+    Messaging: <Messaging />,
+    AddBooking: <AddBooking />,
+  };
 
   return (
     <div className="globalPadding dashboard">
