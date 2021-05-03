@@ -1,5 +1,5 @@
-import React, { useContext, useState } from "react";
-import { Button, Select } from "@chakra-ui/react";
+import React, { useContext } from "react";
+import { Select } from "@chakra-ui/react";
 
 // firestore
 import { firestore } from "../../firebase";
@@ -13,8 +13,6 @@ import "./BookingCard.css";
 const BookingCard = ({ info }) => {
   const { user } = useContext(globalState);
   const isAdmin = user.email === "admin@eventman.com" ? true : false;
-
-  const [selectOption, setSelectOption] = useState(null);
 
   return (
     <div className="booking-card">
@@ -51,7 +49,6 @@ const BookingCard = ({ info }) => {
           <Select
             placeholder="select a option"
             size="lg"
-            value={selectOption}
             isRequired
             onChange={(e) => {
               firestore

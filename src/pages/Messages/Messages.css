@@ -1,0 +1,31 @@
+.messages {
+  display: flex;
+
+  margin: 2rem 0;
+}
+
+.messages__sidebar {
+  flex-basis: 15%;
+  box-shadow: var(--global-shadow);
+  margin-right: 1rem;
+  padding: 2rem;
+  border-radius: var(--global-radius);
+}
+
+.messages__sidebar-title,
+.messages__box-title {
+  font-size: 1.3rem;
+  font-weight: bold;
+  background: var(--primary-dark);
+  padding: 0.5rem;
+  border-radius: var(--global-radius);
+  color: var(--primary-light);
+  margin-bottom: 0.5rem;
+}
+
+.messages__box {
+  box-shadow: var(--global-shadow);
+  padding: 2rem;
+  flex: 1;
+  border-radius: var(--global-radius);
+}

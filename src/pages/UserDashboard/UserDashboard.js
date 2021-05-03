@@ -1,11 +1,11 @@
 import React, { useContext, useState } from "react";
 import { Heading, Button } from "@chakra-ui/react";
+import { useHistory } from "react-router-dom";
 
 //globalState
 import { globalState } from "../../state/globalState";
 
 // components
-import Messaging from "../../components/Messaging/Messaging";
 import DashboardBooking from "../../components/DashboardBooking/DashboardBooking";
 
 // styles
@@ -14,6 +14,7 @@ import "./UserDashboard.css";
 const UserDashboard = () => {
   const { user } = useContext(globalState);
   const [selectedTab, setSelectedTab] = useState("Booking");
+  const history = useHistory();
 
   return (
     <div className="globalPadding dashboard">
@@ -31,21 +32,11 @@ const UserDashboard = () => {
             Bookings
           </Button>
 
-          <Button
-            size="md"
-            onClick={() => setSelectedTab("Messaging")}
-            className={`${
-              selectedTab === "Messaging" ? "dashboard__active-btn" : ""
-            }`}
-          >
+          <Button size="md" onClick={() => history.push("/messaging/")}>
             Messages
           </Button>
         </div>
-        {selectedTab === "Booking" ? (
-          <DashboardBooking user={user} />
-        ) : (
-          <Messaging />
-        )}
+        {selectedTab === "Booking" && <DashboardBooking user={user} />}
       </div>
     </div>
   );

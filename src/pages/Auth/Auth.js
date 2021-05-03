@@ -13,6 +13,7 @@ import { globalState } from "../../state/globalState";
 
 // styles
 import "./Auth.css";
+import { firestore } from "../../firebase";
 
 const Auth = () => {
   const { login, register } = useContext(globalState);
@@ -62,6 +63,10 @@ const Auth = () => {
       .then((user) => {
         setAccountInfo({ email: "", pass: "" });
         setIsLoading(false);
+        firestore.collection(`messages-${user.uid}`).add({
+          userId: user.uid,
+          message: "Chat channel created!",
+        });
         history.push("/user-dashboard");
       })
       .catch((err) => {

@@ -13,6 +13,7 @@ import Services from "./pages/Services";
 import UserDashboard from "./pages/UserDashboard/UserDashboard";
 import Admin from "./pages/Admin/Admin";
 import Checkout from "./pages/Checkout/Checkout";
+import Messages from "./pages/Messages/Messages";
 
 // global state
 import { globalState } from "./state/globalState";
@@ -37,6 +38,9 @@ const App = () => {
         <Route path="/checkout/:id">
           <Checkout />
         </Route>
+        <Route path="/messages/">
+          <Messages />
+        </Route>
         <Redirect to="/" />
       </Switch>
     );
@@ -51,6 +55,9 @@ const App = () => {
         </Route>
         <Route path="/services">
           <Services />
+        </Route>
+        <Route path="/messages/">
+          <Messages />
         </Route>
         <Redirect to="/" />
       </Switch>

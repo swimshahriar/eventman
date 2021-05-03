@@ -1,11 +1,11 @@
 import React, { useContext, useState } from "react";
 import { Heading, Button } from "@chakra-ui/react";
+import { useHistory } from "react-router-dom";
 
 //globalState
 import { globalState } from "../../state/globalState";
 
 // components
-import Messaging from "../../components/Messaging/Messaging";
 import AddBooking from "../../components/AddBooking/AddBooking";
 import DashboardBooking from "../../components/DashboardBooking/DashboardBooking";
 
@@ -15,10 +15,10 @@ import "./Admin.css";
 const Admin = () => {
   const { user } = useContext(globalState);
   const [selectedTab, setSelectedTab] = useState("AddBooking");
+  const history = useHistory();
 
   const tabs = {
     Booking: <DashboardBooking user={user} />,
-    Messaging: <Messaging />,
     AddBooking: <AddBooking />,
   };
 
@@ -48,13 +48,7 @@ const Admin = () => {
             Bookings
           </Button>
 
-          <Button
-            size="md"
-            onClick={() => setSelectedTab("Messaging")}
-            className={`${
-              selectedTab === "Messaging" ? "dashboard__active-btn" : ""
-            }`}
-          >
+          <Button size="md" onClick={() => history.push("/messages")}>
             Messages
           </Button>
         </div>
