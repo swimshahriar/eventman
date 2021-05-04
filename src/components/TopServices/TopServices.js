@@ -1,6 +1,7 @@
 import React from "react";
 import { Heading, Button } from "@chakra-ui/react";
 import { TiTicket } from "react-icons/ti";
+import { useHistory } from "react-router-dom";
 
 // components
 import Card from "../Card/Card";
@@ -14,6 +15,8 @@ import fashionShowBG from "../../assets/home/fashion_show_bg.png";
 import "./TopServices.css";
 
 const TopServices = () => {
+  const history = useHistory();
+
   return (
     <div className="globalPadding topServices marginSection">
       <Heading as="h2" size="2xl" textAlign="center">
@@ -24,7 +27,12 @@ const TopServices = () => {
         <Card text="Weeding" imgSrc={weedingBG} />
         <Card text="Fashion Show" imgSrc={fashionShowBG} />
       </div>
-      <Button leftIcon={<TiTicket />} size="md" className="cards__btn">
+      <Button
+        leftIcon={<TiTicket />}
+        size="md"
+        className="cards__btn"
+        onClick={() => history.push("/services")}
+      >
         Book Now
       </Button>
     </div>

@@ -17,7 +17,7 @@ const Booking = ({ item }) => {
   const toast = useToast();
 
   let isAdmin = false;
-  if (user.email === "admin@eventman.com") {
+  if (user && user.email === "admin@eventman.com") {
     isAdmin = true;
   }
 
@@ -54,10 +54,12 @@ const Booking = ({ item }) => {
       <div className="booking__btn">
         {isAdmin ? (
           <Button onClick={deleteHandler}>Delete</Button>
-        ) : (
+        ) : user ? (
           <Button onClick={() => history.push(`/checkout/${item.id}`)}>
             Book
           </Button>
+        ) : (
+          <Button onClick={() => history.push("/auth")}>Login</Button>
         )}
       </div>
     </div>

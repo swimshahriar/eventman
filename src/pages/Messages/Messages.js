@@ -39,7 +39,8 @@ const Messages = () => {
   }, [isAdmin]);
 
   // send message
-  const sendMessageHandler = () => {
+  const sendMessageHandler = (e) => {
+    e.preventDefault();
     if (inputValue === "") {
       return alert("message cannot be empty!");
     }
@@ -99,7 +100,7 @@ const Messages = () => {
           <div ref={scrollRef}></div>
         </div>
 
-        <form>
+        <form onSubmit={sendMessageHandler}>
           <Input
             value={inputValue}
             placeholder="type here..."

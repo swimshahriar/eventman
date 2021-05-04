@@ -29,6 +29,12 @@ const App = () => {
         <Route path="/" exact>
           <Home />
         </Route>
+        <Route path="/#about">
+          <Home />
+        </Route>
+        <Route path="/#contact">
+          <Home />
+        </Route>
         <Route path="/user-dashboard">
           <UserDashboard />
         </Route>
@@ -50,6 +56,12 @@ const App = () => {
         <Route path="/" exact>
           <Home />
         </Route>
+        <Route path="/#about">
+          <Home />
+        </Route>
+        <Route path="/#contact">
+          <Home />
+        </Route>
         <Route path="/admin">
           <Admin />
         </Route>
@@ -66,6 +78,12 @@ const App = () => {
     routes = (
       <Switch>
         <Route path="/" exact>
+          <Home />
+        </Route>
+        <Route path="/#about">
+          <Home />
+        </Route>
+        <Route path="/#contact">
           <Home />
         </Route>
         <Route path="/auth">

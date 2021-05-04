@@ -52,10 +52,10 @@ const NavBar = () => {
               <NavLink to="/services">Services</NavLink>
             </li>
             <li className="navBar__list-item">
-              <a href="/#about">About</a>
+              <NavLink to="/#about">About</NavLink>
             </li>
             <li className="navBar__list-item">
-              <a href="/#contact">Contact</a>
+              <NavLink to="/#contact">Contact</NavLink>
             </li>
             {user && user.email !== "admin@eventman.com" ? (
               <>
@@ -122,13 +122,13 @@ const NavBar = () => {
               className="mobileNav__list-item"
               onClick={() => setIsMenuOpen(false)}
             >
-              <a href="/#about">About</a>
+              <NavLink to="/#about">About</NavLink>
             </li>
             <li
               className="mobileNav__list-item"
               onClick={() => setIsMenuOpen(false)}
             >
-              <a href="/#contact">Contact</a>
+              <NavLink to="/#contact">Contact</NavLink>
             </li>
             {user && user.email !== "admin@eventman.com" ? (
               <>
