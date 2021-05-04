@@ -56,7 +56,7 @@ const Messages = () => {
 
   // fetching messages
   const listRef = firestore.collection(`messages-${groupId}`);
-  const query = listRef.orderBy("createdAt");
+  const query = listRef.orderBy("createdAt").limit(25);
 
   const [messages] = useCollectionData(query, { idField: "id" });
 
@@ -82,22 +82,20 @@ const Messages = () => {
       </div>
       <div className="messages__box">
         <h4 className="messages__box-title">Messages</h4>
-        <div>
-          <div className="messages__box-container">
-            {messages &&
-              messages.map((message, index) => (
-                <div
-                  className={`messages__box_message ${
-                    user.uid === message.userId ? "sent" : "recieve"
-                  }`}
-                  key={index}
-                >
-                  <p>{message.message}</p>
-                  <p>{message.email}</p>
-                  <p>02:12 pm</p>
-                </div>
-              ))}
-          </div>
+
+        <div className="messages__box-container">
+          {messages &&
+            messages.map((message, index) => (
+              <div
+                className={`messages__box_message ${
+                  user.uid === message.userId ? "sent" : "recieve"
+                }`}
+                key={index}
+              >
+                <p>{message.message}</p>
+                <p>{message.email}</p>
+              </div>
+            ))}
           <div ref={scrollRef}></div>
         </div>
 
