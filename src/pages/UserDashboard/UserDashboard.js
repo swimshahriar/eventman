@@ -32,7 +32,10 @@ const UserDashboard = () => {
             Bookings
           </Button>
 
-          <Button size="md" onClick={() => history.push("/messaging/")}>
+          <Button
+            size="md"
+            onClick={() => history.push(`/messages/${user.uid}`)}
+          >
             Messages
           </Button>
         </div>

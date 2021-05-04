@@ -66,6 +66,13 @@ const Auth = () => {
         firestore.collection(`messages-${user.uid}`).add({
           userId: user.uid,
           message: "Chat channel created!",
+          createdAt: new Date(),
+        });
+        firestore.collection("messages-groups").add({
+          userId: user.uid,
+          groupId: `messages-${user.uid}`,
+          email: user.email,
+          createdAt: new Date(),
         });
         history.push("/user-dashboard");
       })

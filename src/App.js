@@ -38,7 +38,7 @@ const App = () => {
         <Route path="/checkout/:id">
           <Checkout />
         </Route>
-        <Route path="/messages/">
+        <Route path="/messages/:groupId">
           <Messages />
         </Route>
         <Redirect to="/" />
@@ -56,7 +56,7 @@ const App = () => {
         <Route path="/services">
           <Services />
         </Route>
-        <Route path="/messages/">
+        <Route path="/messages/:groupId">
           <Messages />
         </Route>
         <Redirect to="/" />

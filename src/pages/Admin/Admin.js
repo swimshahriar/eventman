@@ -48,7 +48,10 @@ const Admin = () => {
             Bookings
           </Button>
 
-          <Button size="md" onClick={() => history.push("/messages")}>
+          <Button
+            size="md"
+            onClick={() => history.push(`/messages/${user.uid}`)}
+          >
             Messages
           </Button>
         </div>
