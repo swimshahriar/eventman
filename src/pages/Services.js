@@ -21,7 +21,10 @@ const Services = () => {
       </Heading>
 
       <div className="services" style={{ textAlign: "center" }}>
-        {lists && lists.map((item) => <Booking key={item.id} item={item} />)}
+        {lists &&
+          lists.map((item, index) => (
+            <Booking key={item.id} item={item} num={index} />
+          ))}
       </div>
     </div>
   );

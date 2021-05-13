@@ -19,9 +19,9 @@ const PopularItems = () => {
         Popular Items
       </Heading>
       <div className="cards">
-        <Card text="Led Wall Screen" imgSrc={ledWall} />
-        <Card text="Projector" imgSrc={projector} />
-        <Card text="Sound System" imgSrc={soundSystem} />
+        <Card text="Led Wall Screen" imgSrc={ledWall} num="1" />
+        <Card text="Projector" imgSrc={projector} num="2" />
+        <Card text="Sound System" imgSrc={soundSystem} num="3" />
       </div>
     </div>
   );

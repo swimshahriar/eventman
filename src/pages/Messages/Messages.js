@@ -66,17 +66,19 @@ const Messages = () => {
       <div className="messages__sidebar">
         <h4 className="messages__sidebar-title">Groups</h4>
         {isAdmin && groupLists ? (
-          groupLists.map((list) => (
+          groupLists.map((list, index) => (
             <div
               className="messages__sidebar_group"
               key={list.userId}
               onClick={() => history.push(`/messages/${list.userId}`)}
+              data-aos="zoom-in"
+              data-aos-delay={index * 300}
             >
               <p>{list.email}</p>
             </div>
           ))
         ) : (
-          <div className="messages__sidebar_group">
+          <div className="messages__sidebar_group" data-aos="zoom-in">
             <p>admin@eventman.com</p>
           </div>
         )}

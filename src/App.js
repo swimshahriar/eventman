@@ -1,6 +1,8 @@
 import React, { useContext } from "react";
 import { Switch, Route, Redirect } from "react-router-dom";
 import { Spinner, Heading } from "@chakra-ui/react";
+import AOS from "aos";
+import "aos/dist/aos.css";
 
 // components
 import NavBar from "./components/NavBar/NavBar";
@@ -20,7 +22,9 @@ import { globalState } from "./state/globalState";
 
 const App = () => {
   const { user, loading } = useContext(globalState);
-
+  AOS.init({
+    duration: 800,
+  });
   let routes;
 
   if (user && user.email !== "admin@eventman.com") {

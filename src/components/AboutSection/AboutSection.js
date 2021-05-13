@@ -14,8 +14,17 @@ const AboutSection = () => {
         About Us
       </Heading>
       <div className="detailContainer">
-        <Image src={AboutSvg} alt="about us" className="detailContainer-img" />
-        <Text className="detailContainer-text" fontSize="xl">
+        <Image
+          src={AboutSvg}
+          alt="about us"
+          className="detailContainer-img"
+          data-aos="fade-right"
+        />
+        <Text
+          className="detailContainer-text"
+          fontSize="xl"
+          data-aos="fade-left"
+        >
           Lorem ipsum dolor sit amet consectetur adipisicing elit. Sequi eos
           deserunt corrupti deleniti dolores pariatur sapiente illo ut sint
           atque ducimus quia sed nulla, libero cumque quasi. Magni, atque

@@ -88,7 +88,7 @@ const Auth = () => {
         Authentication
       </Heading>
 
-      <form className="auth__form">
+      <form className="auth__form" data-aos="fade-right">
         {error && <p className="auth__form_error">{error}</p>}
         {isLoading && <p className="auth__form_error">Loading...</p>}
         <Input

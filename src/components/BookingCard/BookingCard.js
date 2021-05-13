@@ -10,12 +10,12 @@ import { globalState } from "../../state/globalState";
 // styles
 import "./BookingCard.css";
 
-const BookingCard = ({ info }) => {
+const BookingCard = ({ info, num = 0 }) => {
   const { user } = useContext(globalState);
   const isAdmin = user.email === "admin@eventman.com" ? true : false;
 
   return (
-    <div className="booking-card">
+    <div className="booking-card" data-aos="zoom-in" data-aos-delay={num * 300}>
       <h4>
         <span>BookingId:</span> {info.id}
       </h4>

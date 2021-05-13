@@ -86,7 +86,7 @@ const AddBooking = () => {
     <div className="add-booking">
       <Heading as="h2">Add Booking</Heading>
 
-      <div className="add-booking__section">
+      <div className="add-booking__section" data-aos="fade-right">
         {error && <p className="error">{error}</p>}
         <form className="add-booking__section-form">
           <Input
@@ -161,7 +161,9 @@ const AddBooking = () => {
           </Heading>
           <div className="lists">
             {lists &&
-              lists.map((item) => <Booking item={item} key={item.id} />)}
+              lists.map((item, index) => (
+                <Booking item={item} key={item.id} num={index} />
+              ))}
           </div>
         </div>
       </div>

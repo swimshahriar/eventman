@@ -7,3 +7,9 @@
 .checkout__notes {
   margin: 1.5rem 0;
 }
+
+.booking__desc-checkout {
+  text-align: center;
+  font-size: 1.2rem;
+  margin: 1rem;
+}

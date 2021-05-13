@@ -23,9 +23,9 @@ const TopServices = () => {
         Top Services
       </Heading>
       <div className="cards">
-        <Card text="Conference" imgSrc={conferenceBG} />
-        <Card text="Weeding" imgSrc={weedingBG} />
-        <Card text="Fashion Show" imgSrc={fashionShowBG} />
+        <Card text="Conference" imgSrc={conferenceBG} num="1" />
+        <Card text="Weeding" imgSrc={weedingBG} num="2" />
+        <Card text="Fashion Show" imgSrc={fashionShowBG} num="3" />
       </div>
       <Button
         leftIcon={<TiTicket />}

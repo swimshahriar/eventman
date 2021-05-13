@@ -48,8 +48,8 @@ const DashboardBooking = ({ user }) => {
     <div>
       <Heading as="h2">Booking Lists</Heading>
       {lists &&
-        lists.map((item) => {
-          return <BookingCard key={item.id} info={item} />;
+        lists.map((item, index) => {
+          return <BookingCard key={item.id} info={item} num={index} />;
         })}
     </div>
   );

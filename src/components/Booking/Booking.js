@@ -11,7 +11,7 @@ import { firestore } from "../../firebase";
 //styles
 import "./Booking.css";
 
-const Booking = ({ item }) => {
+const Booking = ({ item, num = 0 }) => {
   const { user } = useContext(globalState);
   const history = useHistory();
   const toast = useToast();
@@ -38,7 +38,7 @@ const Booking = ({ item }) => {
   };
 
   return (
-    <div className="booking">
+    <div className="booking" data-aos="zoom-in" data-aos-delay={num * 300}>
       <img src={item.imgUrl} alt={item.title} />
       <div>
         <Heading as="h6" className="booking__title">

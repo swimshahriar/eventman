@@ -14,12 +14,21 @@ const Contact = () => {
         Contact Us
       </Heading>
       <div className="detailContainer">
-        <Text className="detailContainer-text" fontSize="xl">
+        <Text
+          className="detailContainer-text"
+          fontSize="xl"
+          data-aos="fade-right"
+        >
           <span>Address:</span> Bashundhara R/A <br />
           <span>Email:</span> contact@eventman.com <br />
           <span>Phone:</span> +8801777123456
         </Text>
-        <Image src={contactBG} alt="contact" className="detailContainer-img" />
+        <Image
+          src={contactBG}
+          alt="contact"
+          className="detailContainer-img"
+          data-aos="fade-left"
+        />
       </div>
     </div>
   );

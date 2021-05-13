@@ -14,7 +14,7 @@ const HeroSection = () => {
 
   return (
     <div className="hero globalPadding marginSection">
-      <div className="hero__left">
+      <div className="hero__left" data-aos="fade-right">
         <div className="hero__left-circle circleUp"></div>
         <div className="hero__left-circle circleBottom"></div>
         <Heading as="h2" size="2xl" className="hero__left-heading">
@@ -29,7 +29,7 @@ const HeroSection = () => {
           Book Now
         </Button>
       </div>
-      <div className="hero__right">
+      <div className="hero__right" data-aos="fade-left">
         <Image src={HomeHero} alt="home hero" />
       </div>
     </div>

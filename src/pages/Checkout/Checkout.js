@@ -79,10 +79,10 @@ const Checkout = () => {
           <Heading as="h2" textAlign="center" mt="10">
             Confirmation
           </Heading>
-          <div className="booking">
+          <div className="booking" data-aos="zoom-in">
             <img src={content.imgUrl} alt={content.title} />
             <div>
-              <Heading as="h6" className="booking__title">
+              <Heading as="h6" className="booking__title" textAlign="center">
                 {content.title}
               </Heading>
               <div className="booking__details">
@@ -90,10 +90,12 @@ const Checkout = () => {
                 <p>Category: {content.category}</p>
                 <p>Price: {content.price} Tk</p>
               </div>
-              <p className="booking__desc">Description: {content.desc}</p>
+              <p className="booking__desc-checkout">
+                Description: {content.desc}
+              </p>
             </div>
           </div>
-          <form className="checkout__form">
+          <form className="checkout__form" data-aos="fade-right">
             <Input
               className="checkout__phone"
               placeholder="Phone Number"
