@@ -26,6 +26,7 @@
   background: var(--primary-light);
   padding: 0.5rem;
   border-radius: var(--global-radius);
+  margin-bottom: 0.5rem;
 }
 
 .messages__sidebar_group:hover {

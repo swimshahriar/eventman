@@ -8,7 +8,7 @@ import "aos/dist/aos.css";
 import NavBar from "./components/NavBar/NavBar";
 import Footer from "./components/Footer/Footer";
 
-// pacges
+// pages
 import Home from "./pages/Home";
 import Auth from "./pages/Auth/Auth";
 import Services from "./pages/Services";

@@ -38,7 +38,7 @@ const Booking = ({ item, num = 0 }) => {
   };
 
   return (
-    <div className="booking" data-aos="zoom-in" data-aos-delay={num * 300}>
+    <div className="booking">
       <img src={item.imgUrl} alt={item.title} />
       <div>
         <Heading as="h6" className="booking__title">

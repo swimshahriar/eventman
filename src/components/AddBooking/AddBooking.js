@@ -107,9 +107,9 @@ const AddBooking = () => {
               setContents({ ...contents, venue: e.target.value })
             }
           >
-            <option value="venue-1">Venue-1</option>
-            <option value="venue-2">venue-2</option>
-            <option value="venue-3">venue-3</option>
+            <option value="Shena Malancha">Shena Malancha</option>
+            <option value="Shena Kunja">Shena Kunja</option>
+            <option value="Iccb Hall">Iccb Hall</option>
           </Select>
           <Select
             placeholder="Category"
@@ -120,9 +120,9 @@ const AddBooking = () => {
               setContents({ ...contents, category: e.target.value })
             }
           >
-            <option value="weeding">Weeding</option>
-            <option value="birthday">Birthday</option>
-            <option value="fashion">Fashion</option>
+            <option value="Wedding">Wedding</option>
+            <option value="Birthday">Birthday</option>
+            <option value="Fashion">Fashion</option>
           </Select>
           <Input
             placeholder="Image Url"
